@@ -6,7 +6,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def ocr_pdf(file_path):
-
+    
     images = convert_from_path(
     file_path,
     poppler_path=r"poppler-25.12.0\Library\bin"
@@ -29,6 +29,7 @@ def read_pdf(file_path):
     if text.strip() == "":
         print("⚠️ Using OCR for scanned resume...")
         text = ocr_pdf(file_path)
+        
 
     return text
 

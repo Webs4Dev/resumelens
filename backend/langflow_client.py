@@ -28,7 +28,7 @@ def call_skill_flow(prompt: str):
     )
 
     data = response.json()
-
+  
     return (
         data["outputs"][0]
         ["outputs"][0]
@@ -60,7 +60,6 @@ def call_langflow(prompt: str) -> str:
             return f"Langflow error: HTTP {response.status_code}"
 
         data = response.json()
-
         return (
             data["outputs"][0]
                 ["outputs"][0]
