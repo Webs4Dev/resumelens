@@ -29,9 +29,9 @@ async def analyze_pdf(
         temp_file.write(await resume.read())
         temp_path = temp_file.name
 
-        raw_resume_text = read_pdf(temp_path)
+    raw_resume_text = read_pdf(temp_path)
 
-        os.remove(temp_path)
+    os.remove(temp_path)
 
     
     resume_text, jd_text = get_text(
