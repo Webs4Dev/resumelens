@@ -30,7 +30,6 @@ def read_pdf(file_path):
         print("⚠️ Using OCR for scanned resume...")
         text = ocr_pdf(file_path)
         
-
     return text
 
 def clean_text(text):

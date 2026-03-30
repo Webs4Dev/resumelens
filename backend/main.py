@@ -25,10 +25,14 @@ async def analyze_pdf(
     job_description: str = Form(...),
 ):
 
-    with open(resume.filename, "wb") as f:
-        f.write(await resume.read())
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
+        temp_file.write(await resume.read())
+        temp_path = temp_file.name
 
-    raw_resume_text = read_pdf(resume.filename)
+        raw_resume_text = read_pdf(temp_path)
+
+        os.remove(temp_path)
+
     
     resume_text, jd_text = get_text(
         raw_resume_text,
