@@ -126,8 +126,8 @@ resume-analyzer/
 ### 1️⃣ Clone the Repository
 
 ```
-git clone https://github.com/Webs4Dev/resume-analyzer.git
-cd resume-analyzer
+git clone https://github.com/Webs4Dev/resumelens.git
+cd resumelens
 ```
 
 ---
